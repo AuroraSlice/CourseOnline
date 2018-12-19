@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+	<head>
+		<meta charset="utf-8">
+		<title>线上课程系统</title>
+		<link rel="stylesheet" href="course.css" type="text/css"/>
+		<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css" type="text/css"/>
+		<script type="text/javascript" src="course.js"></script>
+	</head>
+	<body>
+		<div id="header">
+			<div id="menu">
+				<ul id="Direct">
+					<li class="FirstMenu"><a href="#">首页</a></li>
+					<li class="FirstMenu"><a href="#">课程</a></li>
+					
+					<li class="FirstMenu"><a href="#">经典案例</a></li>
+					<li class="FirstMenu"><a href="#">关于我们</a></li>
+					
+					<ul id="DownPage">
+						<li class="SecondMenu"><a href="#">视频课程</a></li>
+						<li class="SecondMenu"><a href="#">互动学习</a></li>
+						<li class="SecondMenu"><a href="#">实例练习</a></li>
+					</ul>
+				</ul>
+			</div>
+			<div id="container">
+				<form>
+					<input type="text" name="search" placeholder="please input to search"></input>
+					<button type="submit"></button>
+				</form>
+			</div>
+		</div>
+
+
+
+
+
+		
+		<div id="center">
+			<div id="center_top">
+				<div id="pictureChange">    
+					<div class="Slice fade">
+						<div class="numberTxt">1/4</div>
+						<img src="./img/4.jpg" style="width: 100%; height: 100%; border-radius: 0.5em;">
+						<div class="text">文本1</div>
+					</div>
+					<div class="Slice fade">
+						<div class="numberTxt">2/4</div>
+						<img src="./img/1.jpg" style="width: 100%; height: 100%; border-radius: 0.5em;">
+						<div class="text">文本2</div>
+					</div>
+					<div class="Slice fade">
+						<div class="numberTxt">3/4</div>
+						<img src="./img/2.jpg" style="width: 100%; height: 100%; border-radius: 0.5em;">
+						<div class="text">文本3</div>
+					</div>
+					<div class="Slice fade">
+						<div class="numberTxt">4/4</div>
+						<img src="./img/3.jpg" style="width: 100%; height: 100%; border-radius: 0.5em;">
+						<div class="text">文本4</div>
+					</div>
+
+					<div class="prev" onclick="picPlus(-1);"></div>
+					<div class="next" onclick="picPlus(1);"></div>
+					
+					<div style="text-align:center">
+  						<span class="dot" onclick="currentSlide(1)"></span> 
+  						<span class="dot" onclick="currentSlide(2)"></span> 
+  						<span class="dot" onclick="currentSlide(3)"></span>
+  						<span class="dot" onclick="currentSlide(4)"></span> 
+					</div>
+				</div>
+				<div id="right_content"></div>
+			</div>
+			<div id="classPresentation">
+				<p>系列课程</p>
+				<div id="classPic">
+					<div class="jpg"><img src="./img/1.jpg"></div>
+					<div class="jpg"><img src="./img/2.jpg"></div>
+					<div class="jpg"><img src="./img/3.jpg"></div>
+					<div class="jpg"><img src="./img/4.jpg"></div>
+				</div>
+			</div>
+		</div>
+	</body>
+
+
+</html>
