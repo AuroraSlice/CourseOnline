@@ -1,4 +1,5 @@
 var indexNum =1;
+var xh = null;
 
 var display = function(){
 		var x = document.getElementById("DownPage");
@@ -12,7 +13,7 @@ var hide = function(){
 
 	}
 
-function showPic(n){
+function showPic(n){   //轮播函数
 
 		var elemts = document.getElementsByClassName("Slice");
 		for (var i = 0; i < elemts.length; i++) {
@@ -34,17 +35,32 @@ function showPic(n){
 }
 
 
-function currentSlide(n) {
+function currentSlide(n) {     //dot选择当前图片
 			window.indexNum=n;
   			showPic(indexNum);
   			return indexNum;
 	}
 
 
-function picPlus(s){
+function picPlus(s){    //下一张图片
 		window.indexNum+=s;
 		showPic(indexNum);
 	}
+
+
+function autoPlay(){     //自动播放
+    xh = setInterval(function(){
+        indexNum++;
+        var elemts = document.getElementsByClassName("Slice");
+        if(indexNum >= elemts.length){
+            indexNum = 0;
+        }
+        showPic(indexNum);
+        
+        
+    },5000);
+}
+
 
 	
 window.onload=function(){
@@ -60,7 +76,13 @@ window.onload=function(){
 
 	
 	showPic(indexNum);
-	
+	autoPlay();
+	var picPionter = document.getElementsByClassName("ppicture");
+	for (var i = 0; i<4;i++) {
+		picPionter[i].addEventListener("mouseover", function(){clearInterval(xh);});
+		picPionter[i].addEventListener("mouseout", autoPlay);
+	}
+
 	
 }
 
