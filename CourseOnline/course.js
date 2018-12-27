@@ -62,6 +62,23 @@ function autoPlay(){     //自动播放
 }
 
 
+function right_content(){
+	var changeColor = document.getElementsByClassName("container_right");
+	for(var i=0;i<changeColor.length;i++){
+		changeColor[i].style.color = "grey";
+		changeColor[i].style.background = "#F8F8FF";
+	}
+	var changeColor2 = document.getElementsByClassName("active_q");
+	for (var i = 0;i<changeColor2.length;i++) {
+		changeColor2[i].style.background = "#F8F8FF";
+	}
+	this.style.color = "#5CACEE";
+	this.style.background = "white";
+	let left = this.childNodes;
+	left[1].style.background ="#5CACEE";
+	
+}
+
 	
 window.onload=function(){
 	var x = document.getElementsByClassName("FirstMenu")[1];
@@ -81,6 +98,12 @@ window.onload=function(){
 	for (var i = 0; i<4;i++) {
 		picPionter[i].addEventListener("mouseover", function(){clearInterval(xh);});
 		picPionter[i].addEventListener("mouseout", autoPlay);
+	}
+
+
+	var right_content_show = document.getElementsByClassName("container_right");
+	for(var i=0;i<right_content_show.length;i++){
+		right_content_show[i].addEventListener("mouseover",right_content);
 	}
 
 	
