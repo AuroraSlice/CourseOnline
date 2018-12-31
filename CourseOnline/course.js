@@ -72,14 +72,50 @@ function right_content(){
 	for (var i = 0;i<changeColor2.length;i++) {
 		changeColor2[i].style.background = "#F8F8FF";
 	}
-	this.style.color = "#5CACEE";
+	this.style.color = "#23b8ff";
 	this.style.background = "white";
 	let left = this.childNodes;
 	left[1].style.background ="#5CACEE";
 	
 }
 
-	
+
+function classMenu(){
+	var change = document.getElementById("classMenu");
+	var change2 = change.childNodes;
+	for (var i =3;i<=change2.length-1; i=i+2) {
+		change2[i].style.borderBottom="4px solid white";
+		change2[i].style.color = "black"
+	}
+	this.style.borderBottom= "4px solid #5CACEE";
+	this.style.color = "#5CACEE";
+	var char = this.innerHTML;
+	var change3 = document.getElementsByClassName("jpg2");
+	if(char=="通用素质"){
+		change3[0].src = "./img/1.jpg";
+		change3[1].src = "./img/2.jpg";
+		change3[2].src = "./img/3.jpg";
+		change3[3].src = "./img/4.jpg";
+	}else if(char=="办公技能"){
+		change3[0].src = "./img/600.jpg";
+		change3[1].src = "./img/601.jpg";
+		change3[2].src = "./img/602.jpg";
+		change3[3].src = "./img/604.jpg";
+	}else if(char=="技能考试"){
+		change3[0].src = "./img/605.jpg";
+		change3[1].src = "./img/606.jpg";
+		change3[2].src = "./img/607.jpg";
+		change3[3].src = "./img/608.jpg";
+	}
+}
+
+
+
+
+
+
+
+
 window.onload=function(){
 	var x = document.getElementsByClassName("FirstMenu")[1];
 	x.addEventListener("mouseover",display,true);
@@ -90,8 +126,6 @@ window.onload=function(){
 		y[i].addEventListener("mouseout",hide,true);
 	}
 
-
-	
 	showPic(indexNum);
 	autoPlay();
 	var picPionter = document.getElementsByClassName("ppicture");
@@ -106,6 +140,16 @@ window.onload=function(){
 		right_content_show[i].addEventListener("mouseover",right_content);
 	}
 
+
+
+
+	var classMenuVar = document.getElementById("classMenu");
+	var classMenuVar2 = classMenuVar.childNodes;
+	
+	for (var i =3;i<=classMenuVar2.length-1; i=i+2) {
+		classMenuVar2[i].addEventListener("click", classMenu);
+		
+	}
 	
 }
 
